@@ -7,19 +7,19 @@ const CLEAR_ERROR_MESSAGE = "auth-reducer/CLEAR_ERROR_MESSAGE"
 
 
 
-let initialState = {
+/*let initialState = {
     isAuth: false,
     username: null,
     userAvatarSrc: null,
     errorMessage: null,
-}
+}*/
 
-/*let initialState = {
+let initialState = {
     isAuth: true,
     username: "560560",
     userAvatarSrc: "https://avatars2.githubusercontent.com/u/23167182?v=4",
     errorMessage: null,
-}*/
+}
 
 const authReducer = (state= initialState, action) => {
     switch (action.type) {
@@ -80,12 +80,10 @@ export const login = ({username}) => async (dispatch) => {
         }
     }
     catch (e) {
+
         if (e.response.status === 404) {
             dispatch(setErrorMessage(`Пользователь не найден`))
-
-          setTimeout(()=> {dispatch(clearErrorMessage())}, 4000)
-
-
+          setTimeout(()=> {dispatch(clearErrorMessage())}, 3000)
         }
 
     }
