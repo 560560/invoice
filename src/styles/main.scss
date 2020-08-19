@@ -1,0 +1,42 @@
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+
+.app__wrapper {
+display: flex;
+  flex-flow: row;
+}
+
+
+.sidebar {
+  min-width: 250px;
+  max-width: 250px;
+  height: 100vh;
+display: flex;
+  flex-flow: column;
+  background-color: #070B22;
+  color: white;
+  padding: 20px 20px 10px 20px;
+
+
+
+  & .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & .avatar{
+      margin-top: 20px;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+  }
+  & .navigation {
+    display: flex;
+    flex-flow: column;
+
+    & .menu__bars {
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
+
