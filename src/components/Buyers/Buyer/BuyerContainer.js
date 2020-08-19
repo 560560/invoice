@@ -10,7 +10,7 @@ class BuyerContainer extends Component {
     }
 }
 
-let mapStateToProps = (state) => {
+let mapStateToProps = (state) => ({
 
-}
+})
 export default connect(mapStateToProps, {})(BuyerContainer);

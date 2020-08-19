@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import Terminals from "./Terminals";
+import {compose} from "redux";
+import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 
 class TerminalsContainer extends Component {
     render() {
@@ -9,7 +11,7 @@ class TerminalsContainer extends Component {
         );
     }
 }
-let mapStateToProps = (state) => {
+let mapStateToProps = (state) => ({
 
-}
-export default connect(mapStateToProps, {})(TerminalsContainer)
+})
+export default compose(connect(mapStateToProps, {}), withAuthRedirect)(TerminalsContainer)

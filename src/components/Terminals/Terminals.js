@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Terminals = ({}) => {
+const Terminals = (props) => {
     return (
         <div>
             Терминалы

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Buyer = ({}) => {
+const Buyer = (props) => {
     return (
         <div>
 Клиент
