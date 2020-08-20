@@ -7,19 +7,13 @@ const CLEAR_ERROR_MESSAGE = "auth-reducer/CLEAR_ERROR_MESSAGE"
 
 
 
-/*let initialState = {
+let initialState = {
     isAuth: false,
     username: null,
     userAvatarSrc: null,
     errorMessage: null,
-}*/
-
-let initialState = {
-    isAuth: true,
-    username: "560560",
-    userAvatarSrc: "https://avatars2.githubusercontent.com/u/23167182?v=4",
-    errorMessage: null,
 }
+
 
 const authReducer = (state= initialState, action) => {
     switch (action.type) {
