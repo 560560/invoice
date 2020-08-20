@@ -7,6 +7,7 @@ const Buyer = ({buyer}) => {
     if (!buyer) return <div>loading...</div>
 
     return (
+        <div className="col-xl-10 col-lg-12 col-md-12 col-sm-12 col-12">
         <Container>
             <Row className="justify-content-center">
 
@@ -63,6 +64,7 @@ const Buyer = ({buyer}) => {
 
 
         </Container>
+        </div>
     );
 }
 

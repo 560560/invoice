@@ -7,7 +7,6 @@ import {getBuyersSelector} from "../../redux/buyers-selector";
 import {setBuyersPerPage, setNameSearchSelector, setSorting} from "../../redux/buyers-reducer";
 
 class BuyersContainer extends Component {
-
     render() {
         return (
             <Buyers {...this.props}/>

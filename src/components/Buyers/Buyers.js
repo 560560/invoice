@@ -6,7 +6,8 @@ import arrowUp from "../../assets/images/arrowUp.svg"
 import arrowDown from "../../assets/images/arrowDown.svg"
 
 
-const Buyers = ({setNameSearchSelector, buyers, setSorting, nameSearchSelector, setBuyersPerPage, buyersPerPage}) => {
+const Buyers = ({setNameSearchSelector, buyers, setSorting, nameSearchSelector,
+                    setBuyersPerPage, buyersPerPage}) => {
     const [currentPage, setCurrentPage] = useState(1)
     let setSort = (e) => {
         let [field, flow] = e.target.id.split(" ")
@@ -29,11 +30,13 @@ const Buyers = ({setNameSearchSelector, buyers, setSorting, nameSearchSelector, 
 
     return (
 
-        <div className="col-10 ">
+        <div className="col-xl-10 col-lg-12 col-md-12 col-sm-12 col-12">
             <Container>
                 <h1 className="text-center mt-5">Покупатели</h1>
                 <Search setNameSearchSelector={setNameSearchSelector} nameSearchSelector={nameSearchSelector}/>
-
+                {buyers.length === 0 && <Row className="justify-content-center mt-5 mb-3 ml-2 mr-2">
+                    <div className="font-weight-bold" style={{color: "red"}}>К сожалению, нет покупателя с таким именем</div>
+                </Row>}
                 <Row className="mb-2">
                     <Col className="d-flex justify-content-end">
                         <DropdownButton
