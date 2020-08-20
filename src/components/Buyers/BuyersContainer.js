@@ -16,7 +16,8 @@ class BuyersContainer extends Component {
 
 let mapStateToProps = (state) => ({
 
-    buyers: getBuyersSelector(state)
+    buyers: getBuyersSelector(state),
+    nameSearchSelector: state.buyersPage.nameSearchSelector
 
 })
 export default compose( connect(mapStateToProps, {setNameSearchSelector, setSorting}), withAuthRedirect)(BuyersContainer)

@@ -1,5 +1,7 @@
 const SET_NAME_SEARCH_SELECTOR = "buyers-selector/SET_NAME_SEARCH_SELECTOR"
 const SET_SORTING = "buyers-selector/SET_SORTING"
+const SET_BUYER = "buyers-selector/SET_BUYER"
+const CLEAR_BUYER = "buyers-selector/CLEAR_BUYER"
 
 let initialState = {
 
@@ -20,6 +22,7 @@ let initialState = {
         {id: 13, name: "Вова", averageCheck: 13600, purchaseCount: 12, totalRevenue: 162000},
         {id: 14, name: "Жора", averageCheck: 6100, purchaseCount: 3, totalRevenue: 17980},
     ],
+    buyer: null,
     nameSearchSelector: null,
     sortingBy: "id",
     sortingFlow: "increase"
@@ -38,11 +41,25 @@ let buyersReducer = (state = initialState, action) => {
                 sortingBy: action.field,
                 sortingFlow: action.flow
             }
+        case SET_BUYER:
+            return {
+                ...state,
+                buyer: [...state.buyers].filter(buyer => buyer.id === action.id)[0]
+            }
+
+        case CLEAR_BUYER:
+            return {
+                ...state,
+                buyer: null
+            }
 
         default :
             return state
     }
 }
+
+
+/* ACTION CREATORS  */
 
 export const setNameSearchSelector = (payload) => {
     return {type: SET_NAME_SEARCH_SELECTOR, payload}
@@ -51,5 +68,20 @@ export const setNameSearchSelector = (payload) => {
 export const setSorting = (field, flow) => {
     return {type: SET_SORTING, field, flow}
 }
+
+const setBuyer = (id) => {
+    return {type: SET_BUYER, id}
+}
+
+export const clearBuyer = () => {
+    return {type: CLEAR_BUYER}
+}
+
+/* THUNK CREATORS  */
+
+export const getBuyerData = (id) => (dispatch) => {
+    dispatch(setBuyer(Number(id)))
+}
+
 
 export default buyersReducer

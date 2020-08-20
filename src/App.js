@@ -1,11 +1,12 @@
 import React from 'react';
 import './styles/main.scss';
-import {Switch, Route, withRouter, Redirect} from "react-router-dom";
+import {Switch, Route, withRouter} from "react-router-dom";
 import TerminalsContainer from "./components/Terminals/TerminalsContainer";
 import BuyersContainer from "./components/Buyers/BuyersContainer";
 import BuyerContainer from "./components/Buyers/Buyer/BuyerContainer";
 import SidebarContainer from "./components/Sidebar/SidebarContainer";
 import LoginContainer from "./components/Login/LoginContainer";
+import Page404 from "./components/Common/Page404";
 
 function App(props) {
   return (
@@ -16,7 +17,9 @@ function App(props) {
           <Route path="/terminals" component={TerminalsContainer}/>
           <Route exact path="/buyers" component={BuyersContainer}/>
           <Route path="/buyers/:id?" component={BuyerContainer}/>
-          {props.match.url === "/" && <Redirect to='/terminals'/>}
+          <Route exact path="/" component={TerminalsContainer}/>
+          <Route path="/" component={Page404}/>
+
      </Switch>
     </div>
   );

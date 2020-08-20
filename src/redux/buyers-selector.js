@@ -5,12 +5,11 @@ export const getBuyersSelector = (state) => {
             .filter(buyer => buyer.name.toLowerCase().includes(state.buyersPage.nameSearchSelector))
             .sort((prev, next) => {
                 if (state.buyersPage.sortingFlow === "increase") return prev[sortingField] - next[sortingField]
-                else if (state.buyersPage.sortingFlow === "decrease") return next[sortingField] - prev[sortingField]
+                else return next[sortingField] - prev[sortingField]
             })
-    } else
-        return [...state.buyersPage.buyers]
-            .sort((prev, next) => {
-                if (state.buyersPage.sortingFlow === "increase") return prev[sortingField] - next[sortingField]
-                else if (state.buyersPage.sortingFlow === "decrease") return next[sortingField] - prev[sortingField]
-            })
+    } else return [...state.buyersPage.buyers]
+        .sort((prev, next) => {
+            if (state.buyersPage.sortingFlow === "increase") return prev[sortingField] - next[sortingField]
+            else return next[sortingField] - prev[sortingField]
+        })
 }

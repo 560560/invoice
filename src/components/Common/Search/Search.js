@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Button, FormControl, Navbar} from "react-bootstrap";
 import {Form, Formik} from "formik";
 
-const Search = ({setNameSearchSelector}) => {
+const Search = ({setNameSearchSelector,nameSearchSelector }) => {
 
     const getFormData = (formData) => {
             setNameSearchSelector(formData.buyer.toLowerCase())
@@ -13,7 +13,14 @@ const Search = ({setNameSearchSelector}) => {
         buyer: ""
     }
 
+    useEffect(()=> {
+        if (nameSearchSelector) {
+            initialValues.buyer = nameSearchSelector
+        }
+    })
+
     return (
+
         <Navbar bg="light" className="mt-4 justify-content-between searchPanel d-block">
             <Formik initialValues={initialValues} onSubmit={getFormData}>
                 {({

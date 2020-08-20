@@ -9,7 +9,7 @@ import arrowDown from "../../assets/images/arrowDown.svg"
 
 
 
-const Buyers = ({setNameSearchSelector, buyers, setSorting}) => {
+const Buyers = ({setNameSearchSelector, buyers, setSorting, nameSearchSelector}) => {
     let setSort = (e) => {
         let [field, flow] = e.target.id.split(" ")
         setSorting(field, flow)
@@ -20,7 +20,7 @@ const Buyers = ({setNameSearchSelector, buyers, setSorting}) => {
         <div className="col-10 ">
             <Container>
                 <h1 className="text-center mt-5">Покупатели</h1>
-                <Search setNameSearchSelector={setNameSearchSelector}/>
+                <Search setNameSearchSelector={setNameSearchSelector} nameSearchSelector={nameSearchSelector}/>
                 <div className="buyers__table">
                     <Table striped bordered hover>
                         <thead>
