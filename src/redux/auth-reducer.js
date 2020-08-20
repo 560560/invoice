@@ -52,7 +52,7 @@ export const logout = () => {
     return {type: CLEAR_AUTH_DATA}
 }
 
-const setAuthData =  (username, avatar) => {
+export const setAuthData =  (username, avatar) => {
     return {type: SET_AUTH_DATA, username, avatar}
 }
 
@@ -71,6 +71,10 @@ export const login = ({username}) => async (dispatch) => {
         let response = await axios.get(`https://api.github.com/users/${username}`)
         if (response.statusText === "OK"){
             dispatch(setAuthData(response.data.login, response.data.avatar_url))
+            localStorage.isAuth = true;
+            localStorage.login = response.data.login
+            localStorage.avatarSrc = response.data.avatar_url
+
         }
     }
     catch (e) {
@@ -85,5 +89,14 @@ export const login = ({username}) => async (dispatch) => {
 
 
 }
+
+
+export const clearSPALoginData = () => (dispatch) => {
+    dispatch(logout())
+    localStorage.isAuth = null;
+    localStorage.login = null
+    localStorage.avatarSrc = null
+}
+
 
 export default authReducer

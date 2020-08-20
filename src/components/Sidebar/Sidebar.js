@@ -4,7 +4,7 @@ import Acoount from "./acoount";
 import * as MdIcons from 'react-icons/md'
 
 
-const Sidebar = ({avatar, logout, isAuth}) => {
+const Sidebar = ({avatar, clearSPALoginData, isAuth}) => {
     const [showMenu, setShowMenu] = useState(false)
 
 const showHiddenMenu= (status) => {
@@ -18,7 +18,7 @@ const showHiddenMenu= (status) => {
 
                     <div className="header">
                         <div className="avatar">
-                            {isAuth && <Acoount logout={logout} avatar={avatar}/>}
+                            {isAuth && <Acoount logout={clearSPALoginData} avatar={avatar}/>}
                         </div>
                     </div>
                     <nav className="navigation">
@@ -34,7 +34,7 @@ const showHiddenMenu= (status) => {
 
                     <div className="header">
                         <div className="avatar">
-                            {isAuth && <Acoount logout={logout} avatar={avatar}/>}
+                            {isAuth && <Acoount logout={clearSPALoginData} avatar={avatar}/>}
                         </div>
                     </div>
                     <nav className="navigation">

@@ -3,12 +3,14 @@ import authReducer from "./auth-reducer"
 import terminalsReducer from "./terminals-reducer"
 import thunkMiddleware from "redux-thunk";
 import buyersReducer from "./buyers-reducer";
+import appReducer from "./app-reducer";
 
 
 let reducers = combineReducers({
     auth: authReducer,
     terminalsPage: terminalsReducer,
-    buyersPage: buyersReducer
+    buyersPage: buyersReducer,
+    appReducer: appReducer
 
 })
 

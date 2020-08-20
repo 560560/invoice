@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Sidebar from "./Sidebar";
 import {connect} from "react-redux";
-import {logout} from "../../redux/auth-reducer";
+import {clearSPALoginData} from "../../redux/auth-reducer";
 
 class SidebarContainer extends Component {
     render() {
@@ -14,4 +14,4 @@ let mapStateToProps = (state) => ({
     avatar : state.auth.userAvatarSrc,
     isAuth : state.auth.isAuth,
 })
-export default connect(mapStateToProps, {logout})(SidebarContainer);
+export default connect(mapStateToProps, {clearSPALoginData})(SidebarContainer);
