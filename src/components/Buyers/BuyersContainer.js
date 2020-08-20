@@ -4,9 +4,10 @@ import {connect} from "react-redux";
 import {compose} from "redux";
 import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 import {getBuyersSelector} from "../../redux/buyers-selector";
-import {setNameSearchSelector, setSorting} from "../../redux/buyers-reducer";
+import {setBuyersPerPage, setNameSearchSelector, setSorting} from "../../redux/buyers-reducer";
 
 class BuyersContainer extends Component {
+
     render() {
         return (
             <Buyers {...this.props}/>
@@ -17,7 +18,8 @@ class BuyersContainer extends Component {
 let mapStateToProps = (state) => ({
 
     buyers: getBuyersSelector(state),
-    nameSearchSelector: state.buyersPage.nameSearchSelector
+    nameSearchSelector: state.buyersPage.nameSearchSelector,
+    buyersPerPage: state.buyersPage.buyersPerPage
 
 })
-export default compose( connect(mapStateToProps, {setNameSearchSelector, setSorting}), withAuthRedirect)(BuyersContainer)
+export default compose( connect(mapStateToProps, {setNameSearchSelector, setSorting, setBuyersPerPage}), withAuthRedirect)(BuyersContainer)

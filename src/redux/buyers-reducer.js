@@ -2,6 +2,7 @@ const SET_NAME_SEARCH_SELECTOR = "buyers-selector/SET_NAME_SEARCH_SELECTOR"
 const SET_SORTING = "buyers-selector/SET_SORTING"
 const SET_BUYER = "buyers-selector/SET_BUYER"
 const CLEAR_BUYER = "buyers-selector/CLEAR_BUYER"
+const SET_BUYERS_PER_PAGE = "buyers-selector/SET_BUYERS_PER_PAGE"
 
 let initialState = {
 
@@ -18,14 +19,15 @@ let initialState = {
         {id: 9, name: "Вова", averageCheck: 2240, purchaseCount: 6, totalRevenue: 12780},
         {id: 10, name: "Оля", averageCheck: 7200, purchaseCount: 7, totalRevenue: 53400},
         {id: 11, name: "Михаил", averageCheck: 5200, purchaseCount: 5, totalRevenue: 26200},
-        {id: 12, name: "Марина", averageCheck: 5200, purchaseCount: 12, totalRevenue: 61700},
+        {id: 12, name: "Марина", averageCheck: 5700, purchaseCount: 12, totalRevenue: 61700},
         {id: 13, name: "Вова", averageCheck: 13600, purchaseCount: 12, totalRevenue: 162000},
         {id: 14, name: "Жора", averageCheck: 6100, purchaseCount: 3, totalRevenue: 17980},
     ],
     buyer: null,
     nameSearchSelector: null,
     sortingBy: "id",
-    sortingFlow: "increase"
+    sortingFlow: "increase",
+    buyersPerPage: 10
 }
 
 let buyersReducer = (state = initialState, action) => {
@@ -52,6 +54,11 @@ let buyersReducer = (state = initialState, action) => {
                 ...state,
                 buyer: null
             }
+        case SET_BUYERS_PER_PAGE:
+            return {
+                ...state,
+                buyersPerPage: action.buyersPerPage
+            }
 
         default :
             return state
@@ -75,6 +82,9 @@ const setBuyer = (id) => {
 
 export const clearBuyer = () => {
     return {type: CLEAR_BUYER}
+}
+export const setBuyersPerPage = (buyersPerPage) => {
+    return {type: SET_BUYERS_PER_PAGE, buyersPerPage}
 }
 
 /* THUNK CREATORS  */

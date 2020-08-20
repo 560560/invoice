@@ -30,6 +30,7 @@ const Search = ({setNameSearchSelector,nameSearchSelector }) => {
 
                   }) => (
                     <Form onSubmit={handleSubmit}>
+                        <Button type="submit" variant="outline-primary" className="mr-2">Найти</Button>
                         <FormControl
                             name="buyer"
                             onChange={handleChange}
@@ -37,7 +38,7 @@ const Search = ({setNameSearchSelector,nameSearchSelector }) => {
                             type="text"
                             placeholder="Поиск по имени"
                             className="mr-sm-2"/>
-                        <Button type="submit" variant="outline-info">Найти</Button>
+
                     </Form>)
                 }
 

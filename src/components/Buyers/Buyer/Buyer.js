@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Card, Col, Container, Row} from "react-bootstrap";
+import {Button, Col, Container, Row} from "react-bootstrap";
 import {useHistory} from "react-router-dom";
 
 const Buyer = ({buyer}) => {

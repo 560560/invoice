@@ -7,9 +7,10 @@ export const getBuyersSelector = (state) => {
                 if (state.buyersPage.sortingFlow === "increase") return prev[sortingField] - next[sortingField]
                 else return next[sortingField] - prev[sortingField]
             })
-    } else return [...state.buyersPage.buyers]
-        .sort((prev, next) => {
-            if (state.buyersPage.sortingFlow === "increase") return prev[sortingField] - next[sortingField]
-            else return next[sortingField] - prev[sortingField]
-        })
+    } else
+        return [...state.buyersPage.buyers]
+            .sort((prev, next) => {
+                if (state.buyersPage.sortingFlow === "increase") return prev[sortingField] - next[sortingField]
+                else  return next[sortingField] - prev[sortingField]
+            })
 }
