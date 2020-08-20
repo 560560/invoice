@@ -36,6 +36,9 @@ body {
 
 }
 
+.sidebar-small {
+  display: none;
+}
 
 .sidebar {
   color: white;
@@ -48,7 +51,7 @@ body {
   padding-bottom: 10px;
   position: fixed;
   justify-content: space-between;
-  transition: 200ms;
+
 
   & .header {
     display: flex;
@@ -345,28 +348,99 @@ body {
 }
 
 
-
-@media (min-width: 768px) and (max-width: 1439px) {
+@media (max-width: 1439px) {
   .min {
-    left: -240px;
-    transition: 200ms;
+    left: -174px;
+    display: none;
+
+    z-index: 10;
   }
 
-}
+  .sidebar-small {
+    z-index: 1;
+    color: white;
+    width: 60px;
+    height: 100vh;
+    display: flex;
+    left: 0px;
+    flex-flow: column;
+    background-color: #060B26;
+    padding-bottom: 10px;
+    position: fixed;
+    justify-content: space-between;
 
-@media (min-width: 576px) and (max-width: 767px) {
-  .min {
 
-    left: -240px;
-    transition: 200ms;
+    & .header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 70px;
+      margin-top: 20px;
+
+
+      & .avatar {
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+
+        & img {
+          height: 50px;
+          width: 50px;
+          border-radius: 5px;
+        }
+
+        & .logout__button {
+          display: none;
+        }
+      }
+
+
+    }
+
+    & .navigation {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: -85px;
+
+      & .menu__bars {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+
+        margin-bottom: 30px;
+
+        & svg {
+
+          font-size: 34px;
+        }
+      }
+
+      & .menu__bars:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    & .footer {
+      text-align: center;
+
+      & span {
+
+        color: #d6e8f8;
+      }
+    }
   }
 
-}
-
-@media (max-width: 575px) {
-  .min {
-    left: -240px;
-    transition: 200ms;
+  .buyers__table {
+    font-size: 12px;
+    width: 100%;
+    height: calc(100vh * 0.6);
+    overflow-y: auto;
+    overflow-x: hidden;
   }
+
 
 }

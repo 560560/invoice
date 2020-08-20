@@ -30,7 +30,7 @@ const Buyers = ({setNameSearchSelector, buyers, setSorting, nameSearchSelector,
 
     return (
 
-        <div className="col-xl-10 col-lg-12 col-md-12 col-sm-12 col-12">
+        <div className="col-xl-10 col-11">
             <Container>
                 <h1 className="text-center mt-5">Покупатели</h1>
                 <Search setNameSearchSelector={setNameSearchSelector} nameSearchSelector={nameSearchSelector}/>

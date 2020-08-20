@@ -48,7 +48,7 @@ const Terminals = ({addNewTerminal, terminals, deleteTerminal}) => {
     }
 
     return (
-        <div className="col-xl-10 col-lg-12 col-md-12 col-sm-12 col-12 ">
+        <div className="col-xl-10 col-12 ">
             <Container className="terminal__container">
 
                 <h1 className="text-center mt-5 ">Терминалы</h1>
