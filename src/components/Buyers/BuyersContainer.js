@@ -3,6 +3,8 @@ import Buyers from "./Buyers";
 import {connect} from "react-redux";
 import {compose} from "redux";
 import {withAuthRedirect} from "../../hoc/withAuthRedirect";
+import {getBuyersSelector} from "../../redux/buyers-selector";
+import {setNameSearchSelector, setSorting} from "../../redux/buyers-reducer";
 
 class BuyersContainer extends Component {
     render() {
@@ -14,5 +16,7 @@ class BuyersContainer extends Component {
 
 let mapStateToProps = (state) => ({
 
+    buyers: getBuyersSelector(state)
+
 })
-export default compose( connect(mapStateToProps, {}), withAuthRedirect)(BuyersContainer)
+export default compose( connect(mapStateToProps, {setNameSearchSelector, setSorting}), withAuthRedirect)(BuyersContainer)
