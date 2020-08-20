@@ -93,9 +93,7 @@ export const login = ({username}) => async (dispatch) => {
 
 export const clearSPALoginData = () => (dispatch) => {
     dispatch(logout())
-    localStorage.isAuth = null;
-    localStorage.login = null
-    localStorage.avatarSrc = null
+    localStorage.clear()
 }
 
 
