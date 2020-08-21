@@ -11,8 +11,12 @@ const Buyers = ({setNameSearchSelector, buyers, setSorting, nameSearchSelector,
 
     const [prevSelectedSortElId, setPrevSelectedSortElId] = useState("")
     const [currentPage, setCurrentPage] = useState(1)
-    let setSort = (e) => {
 
+    if (buyers.length < 6 && currentPage !== 1){
+        setCurrentPage(1)
+    }
+
+    let setSort = (e) => {
         let [field, flow] = e.target.id.split(" ")
         setSorting(field, flow)
         prevSelectedSortElId && document.getElementById(prevSelectedSortElId).classList.remove("active")

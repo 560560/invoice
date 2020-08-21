@@ -23,7 +23,7 @@ const showHiddenMenu= (status) => {
                     </div>
                     <nav className="navigation">
                         <Link to={"/terminals"} className="menu__bars"><MdIcons.MdBorderOuter/><span className="nav__description">Терминалы</span></Link>
-                        <Link to={"/buyers"} className="menu__bars"> <MdIcons.MdAccountCircle/><span className="nav__description">Клиенты</span></Link>
+                        <Link to={"/buyers"} className="menu__bars"> <MdIcons.MdAccountCircle/><span className="nav__description">Покупатели</span></Link>
                     </nav>
                     <div className="footer">
                         <span>Copyright © 2020</span>
