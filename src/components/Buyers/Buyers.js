@@ -8,10 +8,16 @@ import arrowDown from "../../assets/images/arrowDown.svg"
 
 const Buyers = ({setNameSearchSelector, buyers, setSorting, nameSearchSelector,
                     setBuyersPerPage, buyersPerPage}) => {
+
+    const [prevSelectedSortElId, setPrevSelectedSortElId] = useState("")
     const [currentPage, setCurrentPage] = useState(1)
     let setSort = (e) => {
+
         let [field, flow] = e.target.id.split(" ")
         setSorting(field, flow)
+        prevSelectedSortElId && document.getElementById(prevSelectedSortElId).classList.remove("active")
+        document.getElementById(e.target.id).setAttribute('class', 'active')
+        setPrevSelectedSortElId(e.target.id)
     }
 
     const buyerTableSize = (size) => {
