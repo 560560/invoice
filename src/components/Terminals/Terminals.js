@@ -110,7 +110,7 @@ const Terminals = ({addNewTerminal, terminals, deleteTerminal}) => {
                 {terminals.length > 0
                 &&
                 <Row className="position-absolute remove__button__wrapper">
-                    <Col className="d-flex justify-content-end">
+                    <Col className="d-flex justify-content-sm-end justify-content-center p-0">
                         <div
                             className={selectedTerminal !== "empty" ? "remove__button" : "blocked__button"}
                             onClick={deleteSelectedTerminal}>Удалить терминал

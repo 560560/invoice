@@ -476,10 +476,74 @@ body {
     }
   }
 }
-@media screen and (max-width: 992px) {
-.loginWrapper {
- & .container {
+
+@media screen and (max-width: 500px) {
+  .loginWrapper {
+    & .container {
+      padding-left: 30px;
+
+      & .form-control {
+        font-size: 14px;
+      }
+    }
+  }
+  .terminal__container {
+
+
+    & .terminal__name__input {
+      display: flex;
+      flex-direction: column;
+
+      & span {
+        margin-bottom: 15px;
+      }
+
+      & input {
+        font-size: 12px !important;
+        width: 100% !important;
+        margin-bottom: 20px;
+      }
+    }
+
+    & .terminal__description__input {
+      display: flex;
+      flex-direction: column;
+
+      & span {
+        margin-bottom: 15px;
+      }
+
+      & textarea {
+        font-size: 12px !important;
+        width: 100% !important;
+      }
+    }
+
+    & .terminals__table_header {
+      & .title {
+        font-size: 12px !important;
+      }
+    }
+
+    & .terminal__table__item {
+      font-size: 12px;
+    }
+
+
+    & .remove__button__wrapper {
+      width: 96%;
+      justify-content: center;
+      bottom: 20px;
+    }
+
+  }
+
+  .sidebar-small,
+  .sidebar{
+    height: 100%;
+     }
+
+  & .container {
     padding-left: 30px;
   }
-}
 }
