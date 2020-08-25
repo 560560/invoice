@@ -39,7 +39,7 @@ const Login = ({login, isAuth, error}) => {
         <div className="loginWrapper justify-content-center align-items-center ">
             <Container>
                 <Row className="justify-content-center">
-                    <Col xl={5} lg={6} md={8} sm={10} className="col-12">
+                    <Col xl={5} lg={6} md={8} sm={10} className="col-11">
                         <h1 className="text-center pt-4 pb-3">Login form</h1>
                         <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={getLoginData}>
 

@@ -31,7 +31,8 @@ body {
 }
 
 .app__wrapper {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
   position: relative;
 
 }
@@ -258,7 +259,7 @@ body {
 .remove__button__wrapper {
   position: absolute;
   width: 100%;
-  bottom: 20px;
+  bottom: -20px;
 
 
   & .remove__button {
@@ -349,10 +350,16 @@ body {
 
 
 @media (max-width: 1439px) {
+  .app__wrapper {
+    grid-template-columns: 1fr 11fr;
+
+
+  }
+
+
   .min {
     left: -174px;
     display: none;
-
     z-index: 10;
   }
 
@@ -443,4 +450,36 @@ body {
   }
 
 
+}
+
+@media screen and (max-width: 992px) {
+  .app__wrapper {
+    grid-column-gap: 10px;
+
+
+    & .terminal__container {
+
+      max-width: 95%;
+
+      & .terminals__table {
+
+
+        & .terminals__table_header {
+          & .title {
+            font-size: 14px;
+            text-align: center;
+          }
+        }
+      }
+
+
+    }
+  }
+}
+@media screen and (max-width: 992px) {
+.loginWrapper {
+ & .container {
+    padding-left: 30px;
+  }
+}
 }

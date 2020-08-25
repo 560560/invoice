@@ -48,14 +48,14 @@ const Terminals = ({addNewTerminal, terminals, deleteTerminal}) => {
     }
 
     return (
-        <div className="col-xl-10 col-12 ">
+
             <Container className="terminal__container">
 
                 <h1 className="text-center mt-5 ">Терминалы</h1>
 
 
                 <Row className="justify-content-center terminal__add__interface">
-                    <Col className="col-7">
+                    <Col className="col-sm-11 col-11">
                         <div className="terminal__name__input">
                             <span>Наименование терминала</span>
                             <input type="text"
@@ -121,7 +121,7 @@ const Terminals = ({addNewTerminal, terminals, deleteTerminal}) => {
 
             </Container>
 
-        </div>
+
 
     );
 }
